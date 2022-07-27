@@ -3,12 +3,14 @@ import * as uuid from 'uuid';
 
 @Injectable({providedIn: 'root'})
 export class UniqueIdService {
+
   public generateUniqueIdWithPrefix(prefix: string): string {
-    return `${prefix}-${this.generateUniqueId()}`
+    const uniqueId = this.generateUniqueId();
+    return `${prefix}-${uniqueId}`;
   }
 
   private generateUniqueId(): string {
-    return uuid.v1()
+    return uuid.v1();
   }
 
 }
